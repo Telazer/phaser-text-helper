@@ -1,4 +1,4 @@
-import i18next, { TOptions } from "i18next";
+import i18next, { ResourceKey, TOptions } from "i18next";
 import { DomText } from "./domText";
 import { PhaserText } from "./phaserText";
 
@@ -7,6 +7,7 @@ export class TextHelper {
   static PhaserText = PhaserText;
 
   static currentLanguage: string;
+  static localeNames: Record<string, string>;
   static onInitLanguageChangeHandler?: (language: string) => void;
   static onLanguageChangeHandlers?: ((language: string) => void)[] = [];
 
@@ -15,14 +16,17 @@ export class TextHelper {
     locales,
     defaultLocale,
     onLanguageChange,
+    localeNames,
   }: {
     locales?: { key: string; value: object }[];
     defaultLocale?: string;
     onLanguageChange?: (language: string) => void;
+    localeNames?: Record<string, string>;
   }) {
     this.onInitLanguageChangeHandler = onLanguageChange;
 
     this.currentLanguage = defaultLocale || "en";
+    this.localeNames = localeNames || {};
 
     await i18next.init({
       lng: this.currentLanguage,
@@ -63,7 +67,15 @@ export class TextHelper {
 
   // Get Locales
   static get locales() {
-    return Object.keys(i18next.services.resourceStore.data);
+    return Object.entries(i18next.services.resourceStore.data).map(
+      ([key, value]) => {
+        return {
+          key,
+          name: (value.translation as Record<string, string>).localeName || key,
+          value: i18next.services.resourceStore.data[key],
+        };
+      }
+    );
   }
 
   // Get Current Language

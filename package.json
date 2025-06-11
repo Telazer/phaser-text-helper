@@ -1,6 +1,6 @@
 {
   "name": "@telazer/phaser-text-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A helper library for Dom and Phaser text manipulation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "watch": "nodemon --watch ./src -e ts,scss,css,json,html -x \"npm run build\"",
     "prepare": "npm run build",
     "clean": "rm -rf dist"
   },
@@ -25,12 +26,13 @@
   "author": "Baris Tuna <baris@telazer.com, baristna@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "20.11.24",
-    "ts-node": "10.9.2",
-    "typescript": "5.3.3"
+    "@types/node": "^20.11.24",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "i18next": "25.2.1",
-    "phaser": "3.90.0"
+    "i18next": "^25.2.1",
+    "phaser": "^3.90.0"
   }
 }

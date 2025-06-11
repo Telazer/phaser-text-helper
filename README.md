@@ -1,5 +1,7 @@
 # Telazer - Phaser Text Helper
 
+For more helpers and utilities, check out [Telazer NPM Page](https://www.npmjs.com/org/telazer)
+
 ## License
 
 MIT License
