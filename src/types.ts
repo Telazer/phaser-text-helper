@@ -22,3 +22,13 @@ export interface IPhaserText {
   key: string;
   options?: IPhaserTextOptions;
 }
+
+export interface ILocaleData {
+  // key: "en_US"
+  key: string;
+  // name: "English" or "en_US"
+  // you can store localeName in the translation file to get the name of the locale
+  name: string;
+  // value: { loading: "Loading..." }
+  value: Record<string, string>;
+}
