@@ -4,7 +4,7 @@
 
 For more helpers and utilities, check out [Telazer NPM Page](https://www.npmjs.com/org/telazer)
 
-A TypeScript utility library for [Phaser 4](https://phaser.io) that simplifies image handling and manipulation. It offers powerful helpers for:
+A TypeScript utility library for [Phaser 4](https://phaser.io) and HTML that simplifies text handling and manipulation. It offers powerful helpers for:
 
 - Seamless DOM text integration and management
 - Enhanced Phaser text components with automatic updates
