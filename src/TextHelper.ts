@@ -1,7 +1,8 @@
 import i18next, { ResourceKey, TOptions } from "i18next";
 import { DomText } from "./domText";
 import { PhaserText } from "./phaserText";
-import { ILocaleData } from "./types";
+import { ILocaleData, TConfig } from "./types";
+import { format } from "./utils";
 
 export class TextHelper {
   static DomText = DomText;
@@ -46,8 +47,20 @@ export class TextHelper {
   }
 
   // Translate Text
-  static translate(key: string, options?: TOptions) {
-    return i18next.t(key, options);
+  static translate(
+    key: string,
+    options?: {
+      i18n?: TOptions;
+      format?: TConfig["format"];
+    }
+  ) {
+    const translated = i18next.t(key, options?.i18n);
+    if (options?.format) {
+      return format(translated || "", {
+        format: options?.format,
+      });
+    }
+    return translated;
   }
 
   // On Language Change

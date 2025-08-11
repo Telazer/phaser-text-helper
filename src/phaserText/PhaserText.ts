@@ -63,11 +63,13 @@ export class PhaserText extends Phaser.GameObjects.Text {
 
   update() {
     super.update();
-    const translation = TextHelper.translate(
-      this.translationKey,
-      this.options.i18n
-    );
-    const formatted = format(translation, this.options.config);
+    const translation = TextHelper.translate(this.translationKey, {
+      i18n: this.options.i18n,
+      format: this.options.config?.format,
+    });
+    const formatted = format(translation || "", {
+      format: this.options.config?.format,
+    });
     super.setText(formatted);
   }
 

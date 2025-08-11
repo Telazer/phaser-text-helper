@@ -32,7 +32,10 @@ export class DomText extends Text {
   }
 
   public update() {
-    const translated = TextHelper.translate(this.key, this.options?.i18n);
+    const translated = TextHelper.translate(this.key, {
+      i18n: this.options?.i18n,
+      format: this.options?.format,
+    });
     this.textContent = format(translated || "", {
       format: this.options?.format,
     });
