@@ -1,6 +1,6 @@
 {
   "name": "@telazer/phaser-text-helper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A helper library for Dom and Phaser text manipulation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@telazer/phaser-text-helper": "^1.0.2",
+    "change-case": "^5.4.4",
     "i18next": "^25.2.1",
     "phaser": "^4.0.0-rc.4"
   }

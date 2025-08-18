@@ -1,7 +1,37 @@
 import { TOptions } from "i18next";
 
 export type TConfig = {
-  format?: "upperCase" | "lowerCase";
+  /** Examples:
+   * upperCase: "TEST STRING"
+   * lowerCase: "test string"
+   * camelCase: "testString"
+   * capitalCase: "Test String"
+   * constantCase: "TEST_STRING"
+   * dotCase: "test.string"
+   * kebabCase: "test-string"
+   * noCase: "test string"
+   * pascalCase: "TestString"
+   * pascalSnakeCase: "Test_String"
+   * pathCase: "test/string"
+   * sentenceCase: "Test string"
+   * snakeCase: "test_string"
+   * trainCase: "Test-String"
+   */
+  format?:
+    | "upperCase"
+    | "lowerCase"
+    | "camelCase"
+    | "capitalCase"
+    | "constantCase"
+    | "dotCase"
+    | "kebabCase"
+    | "noCase"
+    | "pascalCase"
+    | "pascalSnakeCase"
+    | "pathCase"
+    | "sentenceCase"
+    | "snakeCase"
+    | "trainCase";
 };
 
 type ITextOptions = {
